@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IIFE function from JavaScript</title>
+    <script src="lib/jquery/jquery-1.11.2.js" type="text/javascript"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            $("div[data-highlight='true']").css("background","blue");
+            $("div[data-highlight='false']").css("background","red");
+        });    
+    </script>
+    <div data-highlight="true" >I am a DIV</div>
+    <div data-highlight="false" >I am a new DIV </div>
+    <div data-highlight="true" >I am an other DIV</div>
+</body>
+</html>

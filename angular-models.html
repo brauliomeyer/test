@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Models</title>
+    <script src="lib/angular/angular.js" type="text/javascript"></script>
+    <script>
+        (function(){
+            var name = "myApp", requires = [],
+            myApp = null;
+            myApp = angular.module(name,requires);
+            myApp.controller("AppCtrl", function() {
+                this.employee = {
+                    firstName: "Timothy",
+                    lastName: "Meijer",
+                    occupation: "Web developer"
+                };
+            })
+        }());
+    </script>
+</head>
+<body data-ng-controller="AppCtrl as app">
+	<p>{{app.employee.firstName + " " + app.employee.lastName  + " " + app.employee.occupation}}</p>	
+</body>
+
+</html>

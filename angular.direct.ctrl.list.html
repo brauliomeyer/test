@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Plunker">
+<head>
+   <script src="lib/jquery/jquery-1.11.2.js"></script>
+    <script src="lib/angular/angular.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <title>To controle a list in AJS</title>
+<style>
+    ul {
+        list-style-type: square;
+    }    
+</style>
+<script>
+var app = angular.module("Plunker",[]);
+    app.controller("MainCtrl", function($scope) {
+        $scope.name = "Hello world this is our first app!";
+    });
+    app.controller("ListCtrl", ["$scope", function($scope) {
+        $scope.items = ["Projects","Tasks","Appointments"];
+        $scope.projects = ["Project1","Project2","Project3"];
+        $scope.tasks = ["Task1","Task2","Task3"];
+        $scope.appointments = ["Appointment1","Appointment2","Appointment3"];
+    }]);
+    app.directive("listdata", function() {
+        return {
+            restrict: 'A',
+            template: "<ul><li ng-repeat='data in datalist'>{{data}}</ul></li>",
+            scope: {
+                datalist: '=datalist',
+            }        
+        }
+    });
+</script>
+</head>
+
+<body ng-controller="MainCtrl">
+   
+   <div><h1>{{name}}</h1></div>
+   
+    <div ng-controller="ListCtrl">       
+        <table>
+            <tr>
+                <td>
+                    <div listdata datalist="items"></div>
+                </td>
+                <td>
+                    <div listdata datalist="projects"></div>
+                </td>
+                <td>
+                    <div listdata datalist="tasks"></div>
+                </td>
+                <td>
+                    <div listdata datalist="appointments"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+        
+
+</body>
+</html>

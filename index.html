@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizzz it now!</title>
+    <!-- CSS links --> 
+    <link rel="stylesheet" href="css/style.css" type="text/css">    
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" type="text/css">
+    
+    <!-- JS links --> 
+    <script src="lib/jquery/jquery-1.11.2.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+   
+    <header>
+        <div class="container">
+            <h1>JQuery and Angulas Requests</h1>
+        </div>
+    </header>
+   
+    <main>
+       <div class="container">           
+           <div class="current">
+                <h2 class="currentHeader">Jquery Request</h2>
+                <div>
+                    <form name="imperative">
+                        <label for="yourName">Your name:</label>
+                        <input type="text" name="yourName" id="yourName">
+                        <p id="yourNameOutput"></p>
+                    </form>
+                    <script>
+                        $(document).ready(function() {
+                            $('#yourName').keypress(function() {
+                                var nameValue;
+                                
+                                setTimeout(function() {
+                                    nameValue = $('#yourName').val();
+                                    $('#yourNameOutput').text(nameValue);
+                                }, 0);
+                            
+                            });
+                        });
+                    </script>
+                </div>
+                <br><br>                        
+           </div>
+        </div>
+    </main>
+    
+        <main>
+       <div class="container" ng-app>           
+           <div class="current">
+                <h2 class="currentHeader">Angular Request</h2>
+                <div>
+                    <form name="declarative">
+                        <label for="yourName">Your name:</label>
+                        <input type="text" name="yourName" id="yourName" ng-model="yourName">
+                        <p>{{yourName}}</p>
+                    </form>
+                </div>
+                <br><br>                        
+           </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div>Copyright &copy; 2015 TBM</div>
+        </div>
+    </footer>
+    
+</body>
+</html>
+
+
+
+
+
+

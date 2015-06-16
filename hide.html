@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery & Angular Hide</title>
+    <script type="text/javascript" src="lib/jquery/jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <head class="jumbotron">
+        <h1>JQuery Hide</h1>   
+        <div class="container">
+            <p id="paraOne">I am para!</p>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('#paraOne').hide();
+            });
+        </script>
+    </head>
+    
+    <main class="jumbotron" ng-app>
+        <h1>AngularJS Derectives</h1>
+        <div class="container">
+            <p id="paraTwo" ng-hide="true">I am para!</p>
+        </div>
+    </main>
+    
+    <footer class="jumbotron">
+        <div class="container">
+            
+        </div>
+    </footer>
+</body>
+</html>

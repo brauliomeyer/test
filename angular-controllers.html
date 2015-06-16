@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Controllers</title>
+    <script src="lib/angular/angular.js" type="text/javascript"></script>
+    <script>
+        (function(){
+            var name = "myApp", requires = [],
+            myApp = null;
+            myApp = angular.module(name,requires);
+            
+            myApp.controller("AppCtrl", function($scope) 
+            {
+                $scope.employee = 
+                {
+                    firstName: "Timothy",
+                    lastName: "Meijer",
+                    occupation: "Web developer"
+                };
+                $scope.showMsg = function()
+                {
+                    document.write("This is a message!");
+                }                
+            });
+        }());
+    </script>
+</head>
+<body data-ng-controller="AppCtrl">
+	<p>{{employee.firstName + " " + employee.lastName  + " " + employee.occupation}}</p>
+	<button ng-click="showMsg()">PLease click the button!</button>	
+</body>
+
+</html>

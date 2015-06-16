@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Module and Angular Module</title>
+    <!-- CSS links --> 
+    <link rel="stylesheet" href="css/style.css" type="text/css">    
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" type="text/css">
+    
+    <!-- JS links --> 
+    <script src="lib/jquery/jquery-1.11.2.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+
+    <script>
+        var account = function() {
+        
+            var balance = 0;
+            
+            var deposit = function(money) {
+                balance += money;
+                document.write("balance after deposit: ", balance);
+                console.log("balance after deposit: ", balance);
+                sendMsg();
+            }
+            
+            var withdraw = function(money) {
+                balance -= money;
+                document.write("balance after withdraw: ", balance);
+                console.log("balance after withdraw: ", balance);
+                sendMsg();
+            }
+            
+            var sendMsg = function() {
+                console.log("Sending message!");
+                document.write("<br>");
+                document.write("Sending message!");
+                document.write("<br>");
+            }
+            
+            return {
+                deposit: deposit,
+                withdraw: withdraw
+            }
+        }
+    </script>
+</head>
+   <header>
+        <div class="container">
+            <h1>JavaScript Module and Angular Module</h1>
+        </div>
+    </header>
+    <main>
+       <div class="container">           
+           <div class="current">
+                <h2 class="currentHeader">JavaScript Module</h2>
+                <div>
+                    <script>
+                        var new_account = account();
+                        new_account.deposit(1000,00);
+                        document.write("<br>");
+                        new_account.withdraw(65,00);
+                        document.write("<br>");
+                    </script> 
+                </div>
+                <br><br>                        
+           </div>
+        </div>
+    </main>
+        <main>
+       <div class="container" ng-app="myApp">           
+           <div class="current">
+                <h2 class="currentHeader">Angular Module</h2>
+                <div>
+                    <script>
+                        var myApp = angular.module("myApp",[]);
+                        console.log(myApp);
+                    </script> 
+                </div>
+                <br><br>                        
+           </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div>Copyright &copy; 2015 TBM</div>
+        </div>
+    </footer>
+    
+</body>
+</html>
+
+
